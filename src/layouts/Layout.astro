@@ -1,0 +1,44 @@
+---
+import "@fontsource/germania-one";
+import "@fontsource/manrope";
+---
+
+<!doctype html>
+<html lang="eu">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Txirrita Mendi Lasterketa</title>
+		<script
+			defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+		></script>
+	</head>
+	<body
+		class="bg-stone-950 text-white font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-white"
+	>
+		<slot />
+	</body>
+</html>
+
+<style>
+	@import "../styles/global.css";
+
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: "Manrope", sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	/* Restoring Germania One "Logo-Like" font for headings */
+	:global(h1, h2, h3, .font-germania) {
+		font-family: var(--font-germania);
+		font-weight: 400;
+		letter-spacing: 0.02em;
+	}
+</style>

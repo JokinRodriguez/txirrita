@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+    --color-neon-green: #00ff41;
+    --color-dark-bg: #1a1a1a;
+    --font-germania: "Germania One", cursive;
+    --font-manrope: "Manrope", sans-serif;
+}
+
+@layer components {
+    .text-neon-green {
+        color: var(--color-neon-green);
+    }
+
+    .bg-neon-green {
+        background-color: var(--color-neon-green);
+    }
+
+    .border-neon-green {
+        border-color: var(--color-neon-green);
+    }
+
+    .stroke-text-white {
+        -webkit-text-stroke: 2px rgb(255, 255, 255);
+    }
+}
+
+/* Custom Scrollbar Global */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-neon-green);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+/* Animations */
+@keyframes zoomSlow {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom selection color */
+::selection {
+    background-color: var(--color-neon-green);
+    color: black;
+}

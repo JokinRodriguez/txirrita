@@ -1,0 +1,219 @@
+---
+import Countdown from "./Countdown.astro";
+import Marquee from "./Marquee.astro";
+
+// Background image strategy: using a linear gradient overlay on a placeholder for now,
+// envisioning a dark mountain backdrop.
+---
+
+<section
+    class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
+>
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-stone-900/80 z-10"></div>
+        <!-- Texture/Grid overlay -->
+        <div
+            class="absolute inset-0 z-10 opacity-10 pointer-events-none"
+            style="background-image: linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,0,0,0.1) 1px, transparent 1px); background-size: 100px 100px;"
+        >
+        </div>
+
+        <!-- Mountain Background -->
+        <img
+            src="/hero-bg.jpg"
+            class="w-full h-full object-cover grayscale brightness-80 contrast-125 hero-bg-animate"
+            alt="Background"
+        />
+    </div>
+
+    <!-- Content -->
+    <div
+        class="relative z-20 w-full max-w-7xl mx-auto px-4 flex flex-col items-center h-full justify-between py-10"
+    >
+        <!-- Typography Section -->
+        <div
+            class="flex flex-col items-center justify-center flex-grow mt-10 md:mt-0 transform translate-y-[-5%]"
+        >
+            <h1
+                class="flex flex-col items-center leading-none select-none hero-fade-up"
+            >
+                <!-- TXIRRITA LOGO -->
+                <img
+                    src="/logo-white.png?v=3"
+                    alt="Txirrita"
+                    class="w-full max-w-[280px] md:max-w-4xl h-auto z-10 -mb-2 md:-mb-8 drop-shadow-2xl"
+                />
+            </h1>
+
+            <!-- CTA Section -->
+            <div
+                class="mt-12 md:mt-16 flex flex-col items-center gap-6 hero-fade-up delay-700"
+            >
+                <!-- Date Badge -->
+                <!-- Date Badge HUD Style -->
+                <div
+                    class="bg-black/80 backdrop-blur border border-white/10 px-8 py-3 flex items-center gap-4 relative shadow-[0_0_15px_rgba(0,255,65,0.2)]"
+                >
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-3 bg-neon-green -ml-3"
+                    >
+                    </div>
+
+                    <span
+                        class="font-mono font-bold text-lg md:text-xl tracking-tight text-white/90"
+                    >
+                        IV. EDIZIOA <span class="text-neon-green">//</span> 2026.06.21
+                    </span>
+                </div>
+
+                <!-- Enroll Button -->
+                <a
+                    href="https://inscripciones.kronoak.com/es/evento/txirrita-mendi-lasterketa-2026?auto=1&frm=0&tit=1&men=1&stop=0&pat=1&cmp=1&"
+                    target="_blank"
+                    class="group relative z-10 w-full sm:w-auto text-black bg-neon-green hover:bg-white transition-all duration-500 font-mono text-xs md:text-sm uppercase tracking-[0.2em] font-black px-8 py-5 flex items-center justify-center gap-3 shadow-[0_0_30px_rgba(0,255,65,0.3)] hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transform hover:-translate-y-1 active:translate-y-0"
+                >
+                    <span class="block flex items-center gap-2">
+                        Izena Eman
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2.5"
+                            stroke="currentColor"
+                            class="w-6 h-6 md:group-hover:translate-x-1 transition-transform"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Bottom Info Bar -->
+        <div
+            class="w-full flex flex-col xl:flex-row items-center justify-between gap-4 sm:gap-6 xl:gap-8 mt-8 md:mt-0 hero-fade-up delay-1500"
+        >
+            <!-- Left Info: Location -->
+            <div
+                class="hidden xl:block w-full xl:w-auto flex-1 bg-black/80 backdrop-blur border border-white/10 p-4 sm:p-6 min-w-[250px] sm:min-w-[300px] relative text-center xl:text-left"
+            >
+                <div class="absolute top-4 right-4 text-neon-green">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-5 h-5 sm:w-7 sm:h-7"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3.5 3.5 0 100-7 3.5 3.5 0 000 7z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div
+                    class="text-xs sm:text-base uppercase tracking-widest text-neon-green mb-1"
+                >
+                    Kokapena
+                </div>
+                <div
+                    class="text-2xl sm:text-3xl font-black italic uppercase leading-tight"
+                >
+                    Altza,<br class="hidden xl:block" />Donostia
+                </div>
+                <div
+                    class="h-1 w-20 bg-neon-green mt-2 sm:mt-4 mx-auto xl:mx-0"
+                >
+                </div>
+                <div class="h-1 w-full bg-white/10 mt-[-4px]"></div>
+            </div>
+
+            <!-- Center: Countdown -->
+            <div
+                class="transform scale-75 md:scale-100 xl:scale-90 2xl:scale-100 my-2 xl:my-0"
+            >
+                <Countdown />
+            </div>
+
+            <!-- Right Info: Distance -->
+            <div
+                class="hidden xl:block w-full xl:w-auto flex-1 bg-black/80 backdrop-blur border border-white/10 p-4 sm:p-6 min-w-[250px] sm:min-w-[300px] text-center xl:text-right relative"
+            >
+                <div class="absolute top-4 left-4 text-neon-green">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="w-7 h-7"
+                    >
+                        <path
+                            fill-rule="evenodd"
+                            d="M13.49 5.48c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm-3.6 13.9l1-4.4 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.2L8 8.3V13h2V9.6l1.8-1.3-1.6 8-4 3H2v-2h3.9l1.99-3.41z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </div>
+                <div
+                    class="text-xs sm:text-base uppercase tracking-widest text-neon-green mb-1"
+                >
+                    Distantzia
+                </div>
+                <div
+                    class="text-2xl sm:text-3xl font-black italic uppercase leading-tight"
+                >
+                    17 KM / <span class="text-neon-green">+746</span><span
+                        class="text-neon-green text-3xl sm:text-4xl hidden sm:inline"
+                    >
+                        M+</span
+                    >
+                </div>
+                <div class="h-1 w-full bg-neon-green mt-2 sm:mt-4 xl:ml-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vertical Lines Decoration -->
+    <div
+        class="absolute inset-0 z-0 pointer-events-none flex justify-between px-4 md:px-20 opacity-10"
+    >
+        <div class="w-[1px] h-full bg-white"></div>
+        <div class="w-[1px] h-full bg-white hidden md:block"></div>
+        <div class="w-[1px] h-full bg-white hidden md:block"></div>
+        <div class="w-[1px] h-full bg-white"></div>
+    </div>
+
+    <!-- Marquee Docked at Bottom -->
+    <div class="relative bottom left-0 w-full z-30">
+        <Marquee />
+    </div>
+</section>
+
+<style>
+    /* Scoped animations to ensure they work regardless of global tailwind config */
+    .hero-bg-animate {
+        animation: zoomSlow 12s ease-out infinite alternate;
+        transform-origin: right center;
+    }
+
+    .hero-fade-up {
+        animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        opacity: 0; /* Start invisible */
+    }
+
+    /* Delays */
+    .delay-200 {
+        animation-delay: 0.2s;
+    }
+    .delay-500 {
+        animation-delay: 0.5s;
+    }
+    .delay-700 {
+        animation-delay: 0.7s;
+    }
+    .delay-1500 {
+        animation-delay: 1.5s;
+    }
+</style>

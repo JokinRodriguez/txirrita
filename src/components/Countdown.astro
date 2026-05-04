@@ -1,0 +1,103 @@
+---
+// Target date: June 22, 2026
+const targetDate = new Date("2026-06-21T09:30:00").getTime();
+---
+
+<div
+    class="border border-white/10 bg-black/40 backdrop-blur-md p-1 inline-block"
+>
+    <div
+        class="flex items-center justify-center px-4 md:px-8 py-4 gap-4 md:gap-8 min-w-[280px] md:min-w-[500px]"
+    >
+        <div class="text-center flex-1">
+            <div
+                class="text-4xl md:text-5xl font-bold font-mono tracking-tighter"
+                id="days"
+            >
+                00
+            </div>
+            <div
+                class="text-[8px] md:text-[10px] tracking-widest text-neon-green mt-1 font-bold"
+            >
+                EGUN
+            </div>
+        </div>
+
+        <div class="h-8 md:h-12 w-[1px] bg-white/10"></div>
+
+        <div class="text-center flex-1">
+            <div
+                class="text-4xl md:text-5xl font-bold font-mono tracking-tighter"
+                id="hours"
+            >
+                00
+            </div>
+            <div
+                class="text-[8px] md:text-[10px] tracking-widest text-neon-green mt-1 font-bold"
+            >
+                ORDU
+            </div>
+        </div>
+
+        <div class="h-8 md:h-12 w-[1px] bg-white/10"></div>
+
+        <div class="text-center flex-1">
+            <div
+                class="text-4xl md:text-5xl font-bold font-mono tracking-tighter"
+                id="minutes"
+            >
+                00
+            </div>
+            <div
+                class="text-[8px] md:text-[10px] tracking-widest text-neon-green mt-1 font-bold"
+            >
+                MIN
+            </div>
+        </div>
+
+        <div class="h-8 md:h-12 w-[1px] bg-white/10"></div>
+
+        <div class="text-center flex-1">
+            <div
+                class="text-4xl md:text-5xl font-bold font-mono tracking-tighter text-neon-green"
+                id="seconds"
+            >
+                00
+            </div>
+            <div
+                class="text-[8px] md:text-[10px] tracking-widest text-neon-green mt-1 font-bold"
+            >
+                SEG
+            </div>
+        </div>
+    </div>
+</div>
+
+<script define:vars={{ targetDate }}>
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        );
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        const elDays = document.getElementById("days");
+        const elHours = document.getElementById("hours");
+        const elMinutes = document.getElementById("minutes");
+        const elSeconds = document.getElementById("seconds");
+
+        if (elDays) elDays.innerText = days.toString().padStart(2, "0");
+        if (elHours) elHours.innerText = hours.toString().padStart(2, "0");
+        if (elMinutes)
+            elMinutes.innerText = minutes.toString().padStart(2, "0");
+        if (elSeconds)
+            elSeconds.innerText = seconds.toString().padStart(2, "0");
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+</script>

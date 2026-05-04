@@ -1,0 +1,400 @@
+---
+const stats = [
+    { label: "Distantzia Guztira", value: "17", unit: "KM" },
+    { label: "Gorako Desnibela", value: "+746", unit: "M+" },
+    { label: "Puntu Gorena", value: "252", unit: "M" },
+    { label: "Zailtasun Maila", value: "ERTAINA", unit: "" },
+];
+---
+
+<section
+    id="course"
+    class="relative bg-black text-white py-12 md:py-24 font-sans overflow-hidden min-h-screen border-t border-white/20"
+>
+    <div
+        class="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black z-0 pointer-events-none"
+    >
+    </div>
+
+    <!-- Balanced Topographic Background -->
+    <div
+        class="absolute inset-0 z-0 opacity-[0.10] pointer-events-none overflow-hidden mix-blend-screen"
+    >
+        <div
+            class="absolute inset-0 bg-no-repeat bg-center"
+            style="background-image: url('/src/assets/topo-balanced.png'); background-size: cover; filter: invert(1) brightness(0.2) sepia(1) saturate(5) hue-rotate(85deg);"
+        >
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <!-- Header -->
+        <div class="relative mb-12 md:mb-16">
+            <!-- Background Text Decoration -->
+            <div
+                class="absolute -top-4 md:-top-10 left-1/2 -translate-x-1/2 w-screen overflow-hidden opacity-10 pointer-events-none select-none flex justify-center"
+            >
+                <span
+                    class="text-6xl sm:text-8xl md:text-[200px] font-black italic leading-none text-transparent stroke-text-white whitespace-nowrap"
+                >
+                    IBILBIDEA
+                </span>
+            </div>
+
+            <div
+                class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/20 pb-8"
+            >
+                <div
+                    class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto"
+                >
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="h-[1px] w-12 bg-neon-green"></div>
+                        <span
+                            class="text-neon-green font-mono text-xs md:text-sm tracking-[0.3em] uppercase"
+                            >01 // Ibilbidea</span
+                        >
+                    </div>
+                    <h2
+                        class="text-4xl md:text-8xl font-sans font-black italic uppercase leading-[0.85] tracking-tighter"
+                    >
+                        <span
+                            class="block text-transparent stroke-text-white opacity-70"
+                            >Lasterketako</span
+                        >
+                        <span
+                            class="text-neon-green drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]"
+                            >Ibilbidea</span
+                        >
+                    </h2>
+                </div>
+
+                <div class="max-w-md text-center md:text-right">
+                    <p
+                        class="font-mono text-[10px] md:text-xs leading-relaxed text-white/70 uppercase tracking-wide mb-4"
+                    >
+                        <span class="text-neon-green">///</span> Sentitu Altzako lur
+                        malkartsua. Datuen sinkronizazioa. Gailur teknikoak. Garaiera
+                        denbora errealean.
+                    </p>
+                    <div class="flex justify-center md:justify-end gap-1">
+                        <div class="w-2 h-2 bg-neon-green"></div>
+                        <div class="w-2 h-2 bg-white/20"></div>
+                        <div class="w-2 h-2 bg-white/20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div
+            class="grid grid-cols-1 lg:grid-cols-3 gap-0 border border-white/20"
+        >
+            <!-- Map Area (Span 2 cols) -->
+            <div
+                class="lg:col-span-2 relative min-h-[450px] md:min-h-[700px] border-b lg:border-b- lg:border-r border-white/20 group overflow-hidden"
+            >
+                <!-- Wikiloc Embed -->
+                <div
+                    class="w-full h-[450px] sm:h-[550px] md:h-[700px] md:grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                >
+                    <!-- Mobile iframe (No Elevation Profile to maximize map area) -->
+                    <iframe
+                        class="w-full h-full md:hidden"
+                        frameborder="0"
+                        scrolling="no"
+                        src="https://www.wikiloc.com/wikiloc/embedv2.do?id=219044766&elevation=off&heartrate=off&speed=off&maptype=H"
+                        title="Txirrita Mendi Lasterketa Route (Mobile)"
+                    >
+                    </iframe>
+                    <!-- Desktop iframe (With Elevation Profile) -->
+                    <iframe
+                        class="w-full h-full hidden md:block"
+                        frameborder="0"
+                        scrolling="no"
+                        src="https://www.wikiloc.com/wikiloc/embedv2.do?id=219044766&elevation=on&heartrate=off&speed=off&maptype=H"
+                        title="Txirrita Mendi Lasterketa Route"
+                    >
+                    </iframe>
+                </div>
+
+                <!-- Map Frame Decoration -->
+                <div
+                    class="absolute inset-0 z-40 pointer-events-none border border-white/5 transition-all duration-700 md:group-hover:border-neon-green/30"
+                >
+                    <!-- Corners -->
+                    <div
+                        class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon-green opacity-100 md:opacity-50 md:group-hover:opacity-100 transition-opacity"
+                    >
+                    </div>
+                    <div
+                        class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-neon-green opacity-100 md:opacity-50 md:group-hover:opacity-100 transition-opacity"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-neon-green opacity-100 md:opacity-50 md:group-hover:opacity-100 transition-opacity"
+                    >
+                    </div>
+                    <div
+                        class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-green opacity-100 md:opacity-50 md:group-hover:opacity-100 transition-opacity"
+                    >
+                    </div>
+                </div>
+
+                <!-- IBILBIDEA OVERLAY MARQUEE -->
+                <div
+                    class="absolute inset-0 z-30 hidden md:flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity duration-500 overflow-hidden"
+                >
+                    <div
+                        class="bg-neon-green/40 backdrop-blur-[3px] w-full py-2 md:py-4 transform -rotate-2 scale-110"
+                    >
+                        <div
+                            class="animate-marquee whitespace-nowrap text-4xl sm:text-6xl md:text-9xl font-black italic text-transparent stroke-text-white opacity-100"
+                        >
+                            IBILBIDEA // IBILBIDEA // IBILBIDEA // IBILBIDEA //
+                            IBILBIDEA // IBILBIDEA // IBILBIDEA //
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Controls Decoration -->
+                <div
+                    class="absolute bottom-0 left-0 w-full p-4 md:p-6 bg-gradient-to-t from-black via-black/90 to-transparent z-20 flex justify-center items-end pointer-events-none h-36 md:h-20"
+                >
+                    <a
+                        href="https://www.wikiloc.com/wikiloc/view.do?id=219044766"
+                        target="_blank"
+                        class="pointer-events-auto group relative overflow-hidden bg-neon-green text-black px-6 md:px-8 py-2.5 md:py-3 font-black italic text-base md:text-lg uppercase tracking-wider hover:bg-white transition-all duration-300 transform skew-x-[-10deg] md:hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(0,255,65,0.4)]"
+                    >
+                        <span
+                            class="relative z-10 block transform skew-x-[10deg]"
+                            >GPX Deskargatu</span
+                        >
+                        <div
+                            class="absolute inset-0 bg-white transform translate-y-full md:group-hover:translate-y-0 transition-transform duration-300 z-0"
+                        >
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Column -->
+            <div
+                class="lg:col-span-1 grid grid-cols-2 lg:flex lg:flex-col divide-white/20 bg-black/50"
+            >
+                {
+                    stats.map((stat, index) => (
+                        <div
+                            class={`p-6 md:p-8 md:p-10 flex flex-col justify-center items-center lg:items-start border-white/20 
+                                ${index === stats.length - 1 ? "bg-neon-green text-black col-span-2 lg:col-span-1" : ""} 
+                                ${index % 2 === 0 ? "border-r" : "lg:border-r-0"} 
+                                ${index < 2 ? "border-b" : "lg:border-b"} 
+                                ${index === 2 ? "border-b border-white/20 lg:border-b" : ""}`}
+                        >
+                            <span
+                                class={`font-mono text-[10px] md:text-xs uppercase tracking-widest mb-1 md:mb-2 ${index === stats.length - 1 ? "text-black/70 font-bold" : "text-neon-green"}`}
+                            >
+                                {stat.label}
+                            </span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl md:text-5xl md:text-6xl font-black italic tracking-tighter leading-none">
+                                    {stat.value}
+                                </span>
+                                <span
+                                    class={`text-sm md:text-xl font-bold italic ${index === stats.length - 1 ? "text-black" : "text-neon-green"}`}
+                                >
+                                    {stat.unit}
+                                </span>
+                            </div>
+                            {index === stats.length - 1 && (
+                                <div class="flex gap-1 mt-2">
+                                    <div class="w-8 h-1 bg-black" />
+                                    <div class="w-8 h-1 bg-black/30" />
+                                    <div class="w-8 h-1 bg-black/30" />
+                                </div>
+                            )}
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+
+        <!-- Bottom Actions -->
+        <div
+            class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 mt-4 md:mt-8"
+        >
+            <!-- GPS Export Card -->
+            <div
+                class="relative border border-white/10 p-4 md:p-8 flex items-center justify-between hover:border-neon-green/50 transition-all duration-500 group overflow-hidden bg-white/[0.02]"
+            >
+                <!-- HUD Corner Decos -->
+                <div
+                    class="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/20 md:group-hover:border-neon-green transition-colors"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/20 md:group-hover:border-neon-green transition-colors"
+                >
+                </div>
+
+                <!-- Background Scanning Line -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-green/5 to-transparent h-1/2 w-full -translate-y-full md:group-hover:animate-scan pointer-events-none opacity-0 md:group-hover:opacity-100"
+                >
+                </div>
+
+                <div class="relative z-10">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span
+                            class="font-mono text-[12px] text-neon-green bg-neon-green/10 px-1.5 py-0.5 rounded-sm"
+                            >IBIL_DATUAK.v2</span
+                        >
+                        <div
+                            class="w-1 h-1 rounded-full bg-neon-green animate-pulse"
+                        >
+                        </div>
+                    </div>
+                    <h4
+                        class="font-sans font-black italic text-xl md:text-2xl uppercase mb-1 md:group-hover:text-neon-green transition-colors flex items-center gap-3"
+                    >
+                        GPS Datuak Jaitsi
+                    </h4>
+                    <p
+                        class="font-mono text-[10px] md:text-xs text-white/40 md:group-hover:text-white/70 transition-colors"
+                    >
+                        WIKILOC-EN BITARTEZ
+                    </p>
+                </div>
+
+                <a
+                    href="https://es.wikiloc.com/rutas-carreras-por-montana/txirrita-mendi-lasterketa-141253712"
+                    target="_blank"
+                    class="relative z-10 w-12 h-12 md:w-14 md:h-14 border border-white/10 flex flex-col items-center justify-center md:group-hover:bg-neon-green md:group-hover:text-black md:group-hover:border-neon-green active:bg-neon-green active:text-black transition-all duration-500 overflow-hidden"
+                >
+                    <div
+                        class="absolute top-0 right-0 font-mono text-[6px] p-0.5 opacity-20 md:group-hover:opacity-50"
+                    >
+                        DL_S01
+                    </div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="w-5 h-5 md:w-6 md:h-6"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                        ></path>
+                    </svg>
+                    <span
+                        class="font-mono text-[6px] font-bold mt-0.5 hidden md:group-hover:block"
+                        >PREST</span
+                    >
+                </a>
+            </div>
+
+            <!-- Registration Card -->
+            <div
+                class="relative border border-white/10 p-4 md:p-8 flex items-center justify-between hover:border-neon-green/50 transition-all duration-500 group overflow-hidden bg-neon-green/[0.03]"
+            >
+                <!-- HUD Corner Decos -->
+                <div
+                    class="absolute top-0 right-0 w-2 h-2 border-t border-r border-white/20 md:group-hover:border-neon-green transition-colors"
+                >
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-white/20 md:group-hover:border-neon-green transition-colors"
+                >
+                </div>
+
+                <div class="relative z-10 w-full pr-4 md:pr-8">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span
+                            class="font-mono text-[14px] text-white/40 tracking-tighter uppercase"
+                            >Egoera:
+                        </span>
+                        <span
+                            class="font-mono text-[14px] text-neon-green font-bold animate-pulse"
+                            >MARTXAN</span
+                        >
+                    </div>
+                    <h4
+                        class="font-sans font-black italic text-xl md:text-2xl uppercase mb-3"
+                    >
+                        Izen-ematea: Zabalik
+                    </h4>
+
+                    <!-- Tech Progress Bar -->
+                    <div class="w-full max-w-[200px]">
+                        <div
+                            class="flex justify-between font-mono text-[12px] mb-1"
+                        >
+                            <span class="text-white/40"
+                                >PARTE-HARTZAILE_KOPURUA</span
+                            >
+                            <span class="text-neon-green">75%</span>
+                        </div>
+                        <div class="h-1 w-full bg-white/5 relative">
+                            <div class="absolute inset-0 bg-neon-green w-[75%]">
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-white/20 w-[100%] animate-pulse"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a
+                    href="https://inscripciones.kronoak.com/es/evento/txirrita-mendi-lasterketa-2026?auto=1&frm=0&tit=1&men=1&stop=0&pat=1&cmp=1&"
+                    target="_blank"
+                    class="group inline-flex items-center gap-4 bg-neon-green text-black px-12 py-6 font-mono text-sm uppercase tracking-widest font-black hover:bg-white transition-all duration-500 shadow-[0_0_40px_rgba(0,255,65,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.3)] transform hover:-translate-y-1"
+                >
+                    <span class="skew-x-12">Izena Eman</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .stroke-text-white {
+        -webkit-text-stroke: 2px rgb(255, 255, 255);
+    }
+
+    .animate-marquee {
+        animation: marquee 15s linear infinite;
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    @keyframes scan {
+        0% {
+            transform: translateY(-100%);
+        }
+        100% {
+            transform: translateY(200%);
+        }
+    }
+
+    .animate-scan {
+        animation: scan 2s linear infinite;
+    }
+</style>
+
+<style is:global>
+    /* Add a subtle inner glow on hover to the map container */
+    #course .group:hover .absolute.inset-0.z-40 {
+        box-shadow: inset 0 0 50px rgba(0, 255, 65, 0.05);
+    }
+</style>

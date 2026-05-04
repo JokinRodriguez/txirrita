@@ -1,0 +1,437 @@
+---
+const categories = [
+    {
+        id: "01",
+        title: "IZEN EMATEA ETA LASTERKETA",
+        items: [
+            {
+                title: "1. DATA ETA LEKUA",
+                text: "Txirrita Mendi Lasterketa 2026ko ekainaren 21ean izango da, goizeko 9:30ean. Abiapuntua eta helmuga Altzako San Martzial plazan izango dira.",
+            },
+            {
+                title: "2. IBILBIDEA",
+                text: "17 km-ko ibilbidea Txoritokieta eta Bizaraindik. 3 hornidura postu (km 5.5, 7.5 eta 11.4). Zaborra murrizteko, gomendagarria da edalontzi berrerabilgarria eramatea.",
+            },
+            {
+                title: "3. IZEN-EMATEA",
+                text: "Banakakoa (22€) edo Errelebo mixtoa (35€ bikoteko). Epea: 2026ko martxoaren 26tik ekainaren 7ra. Asegurua, txipa, hornidura, opariak eta dutxa zerbitzuak barne. Behin izena emanda ez da dirurik itzuliko.",
+            },
+            {
+                title: "4. ERRELEBO LASTERKETA",
+                text: "Bikotean kide bat emakumezkoa izan behar da. Erreleboa Txoritokietan emango da (km 7,5). Chip-a (lekukoa) horkatilean eraman behar da. Galduz gero, bikoteak jasan beharko du gastua (7€).",
+            },
+            {
+                title: "5. KORRIKALARIEN ZENBAKIEN BANAKETA",
+                text: "Korrikalarien poltsak (dagozkien zenbakiekin) Altzako elizaren arkupetan banatuko dira, lasterketaren egunean, 7:30etik 9:15era arte. Zenbakiak bularrean jarri behar dira, argi eta garbi ikusgai.",
+            },
+            {
+                title: "6. ZAINTZA ZERBITZUA ETA DUTXAK",
+                text: "Elizako arkupeetan motxilak uzteko zaindegia egongo da lasterketan zehar. Motxila horiek bi begiraleren eskuetan egongo dira uneoro. Dutxen kasuan, plazatik gertu egongo dira aldagelak.",
+            },
+            {
+                title: "7. MAILAK",
+                text: "16 urtetik gorakoek soilik parte har dezakete. Banakako proban, bi maila izango dira: absolutua (16 eta 44 urte bitartekoentzat) eta beteranoen maila (45 urtetatik gorakoentzat), kategoria orokorrean eta emakumezkoenean. • Erreleboetan maila bakarra egongo da.",
+            },
+        ],
+    },
+    {
+        id: "02",
+        title: "SAILKAPENA ETA SARIAK",
+        items: [
+            {
+                title: "8. SAILKAPENA",
+                text: "Kronometrajea: Kronoak. Deskalifikazioa: ibilbidea ez osatzea, zaborra botatzea, animalia/landareak ez errespetatzea, kirol-kontrako jarrera, dortsalik gabe edo beste batenarekin korritzea.",
+            },
+            {
+                title: "9. SARIAK",
+                text: "Bakarkako lasterketan, honako sariak egongo dira: • Sailkapen orokorreko lehen hirurentzat, eta lehen hiru emakumezkoentzat. • Lehen beteranoarentzet, eta emakumezko lehen beteranoarentzat. • Horiez gain, lehen altzatarrentzat eta emakumezko lehen altzatarrentzat ere saria egongo da. Errelebo lasterketari dagokionez, lehen hiru bikoteek izango dute saria.",
+            },
+            {
+                title: "10. OPARIAK",
+                text: "Lasterketa posible egiten duten hainbat babesleren produktuak izango dira korrikalari bakoitzaren poltsan. Era berean, lasterketako hainbat produktu ere egongo dira bertan.",
+            },
+        ],
+    },
+    {
+        id: "03",
+        title: "SEGURTASUNA ETA ARAUAK",
+        items: [
+            {
+                title: "11. SEGURTASUNA",
+                text: "Udaltzain, boluntario eta Gurutze Gorrikoen laguntzaz, antolatzaileek lasterketa ondo kudeatzea eta arazorik ez izatea bermatuko dute. Antolakuntzak eskubide osoa izango du proba beste ibilbide batetik desbideratzeko, beharrezkotzat jo liratekeen aldaketak egiteko eta, eguraldiak edota beste eragileren batek behartuta balego, lasterketa bertan behera uzteko.",
+            },
+            {
+                title: "12. ERANTZUKIZUNA",
+                text: "Parte-hartzaileek euren ardurapean parte hartzen dute. Antolakuntzak aseguruak bermatzen ditu, baina ez da norberaren egoeragatik edo akzioengatik sortutako ezbeharren erantzule izango.",
+            },
+            {
+                title: "13. KONTROLAK",
+                text: "Ibilbidearen luze-zabalean, antolakuntzak kontrol-guneak jarriko ditu eta bertatik igarotzea ezinbestekoa izango da.",
+            },
+        ],
+    },
+    {
+        id: "04",
+        title: "INGURUMENA ETA LEGEA",
+        items: [
+            {
+                title: "14. INGURUMENA",
+                text: "Errespetatu natura: zaborra soilik hornidura postuetako ontzietara bota daiteke. Ibilbidetik ateratzea, landareak kaltetzea edo animaliak ez errespetatzea deskalifikazio arrazoi izango dira.",
+            },
+            {
+                title: "15. IRUDI ESKUBIDEAK",
+                text: "Parte hartzaile bakoitzak ontzat ematen du antolatzaileek ateratako argazki edo bideoetan euren irudia libreki erabiltzeko eskubidea.",
+            },
+            {
+                title: "16. DATUEN BABESA",
+                text: "Parte-hartzaileek euren datu pertsonalak kirol helburuetarako erabiltzeko baimena ematen dute.",
+            },
+            {
+                title: "17. ARAUDIAREN ONARPENA",
+                text: "Lehiaketan parte hartze hutsak arauok onartzea dakar.",
+            },
+        ],
+    },
+];
+---
+
+<section
+    id="rules"
+    class="relative bg-[#0b100b] text-white py-12 md:py-24 font-sans border-t border-white/10 selection:bg-neon-green selection:text-black overflow-hidden"
+    x-data={`{ activeCategory: '01', categories: ${JSON.stringify(categories)} }`}
+>
+    <!-- Background Texture -->
+    <div
+        class="absolute inset-0 z-0 bg-repeat opacity-[0.02]"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'%3E%3Ccircle cx=\'3\' cy=\'3\' r=\'1\'/%3E%3C/svg%3E');"
+    >
+    </div>
+
+    <!-- Grid pattern overlay -->
+    <div
+        class="absolute inset-0 z-0 opacity-[0.03] bg-[linear-gradient(rgba(255,255,255,1)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,1)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+        <!-- Header -->
+        <div class="relative mb-12 md:mb-16">
+            <div
+                class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/20 pb-8"
+            >
+                <div
+                    class="absolute -top-4 md:-top-10 left-1/2 -translate-x-1/2 w-screen overflow-hidden opacity-10 pointer-events-none select-none flex justify-center"
+                >
+                    <span
+                        class="text-6xl sm:text-8xl md:text-[200px] font-black italic leading-none text-transparent stroke-text-white whitespace-nowrap"
+                    >
+                        ARAUDIA
+                    </span>
+                </div>
+
+                <div
+                    class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto"
+                >
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="h-[1px] w-12 bg-neon-green"></div>
+                        <span
+                            class="text-neon-green font-mono text-xs md:text-sm tracking-[0.3em] uppercase"
+                            >02 // Araudia</span
+                        >
+                    </div>
+                    <h2
+                        class="text-4xl md:text-8xl font-sans font-black italic uppercase leading-[0.85] tracking-tighter"
+                    >
+                        <span class="block text-transparent stroke-text-white"
+                            >Dokumentu</span
+                        >
+                        <span
+                            class="text-neon-green drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]"
+                            >Teknikoa</span
+                        >
+                    </h2>
+                </div>
+
+                <div class="max-w-md text-center md:text-right">
+                    <p
+                        class="font-mono text-[10px] md:text-xs leading-relaxed text-white/70 uppercase tracking-wide mb-4"
+                    >
+                        <span class="text-neon-green">///</span> Txirrita Mendi Lasterketako
+                        arau eta baldintza teknikoak. Parte-hartzaile guztiek onartu
+                        eta bete beharrekoak.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div
+            class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-t border-white/20"
+        >
+            <!-- Sidebar Navigation -->
+            <div
+                class="lg:col-span-4 border-l border-r border-white/20 relative group/nav"
+            >
+                <!-- Mobile Scroll Indicators -->
+                <div
+                    class="absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-black to-transparent z-20 pointer-events-none lg:hidden"
+                >
+                </div>
+                <div
+                    class="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-black to-transparent z-20 pointer-events-none lg:hidden"
+                >
+                </div>
+
+                <div
+                    class="flex lg:flex-col overflow-x-auto lg:overflow-x-visible no-scrollbar scroll-smooth"
+                    id="rules-nav"
+                >
+                    <template x-for="category in categories" :key="category.id">
+                        <button
+                            @click="activeCategory = category.id; document.getElementById('rules-content').scrollTop = 0"
+                            class="shrink-0 lg:w-full text-left p-4 md:p-8 border-b border-white/20 group transition-all duration-500 relative overflow-hidden h-20 md:h-32 flex flex-col justify-center min-w-[200px] lg:min-w-0"
+                            :class="activeCategory === category.id ? 'bg-white/15' : 'md:hover:bg-white/5 active:bg-white/10 bg-transparent'"
+                        >
+                            <!-- Active Indicator Line -->
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-1 bg-neon-green transition-transform duration-300"
+                                :class="activeCategory === category.id ? 'translate-x-0' : '-translate-x-full'"
+                            >
+                            </div>
+
+                            <!-- Neon Glow on Active (Mobile) -->
+                            <div
+                                class="absolute inset-x-0 bottom-0 h-[2px] bg-neon-green/50 blur-[4px] lg:hidden"
+                                x-show="activeCategory === category.id"
+                            >
+                            </div>
+
+                            <div
+                                class="flex items-baseline gap-3 md:gap-4 relative z-10"
+                            >
+                                <span
+                                    class="text-3xl md:text-5xl font-black italic text-white/20 md:group-hover:text-white/40 transition-colors"
+                                    :class="activeCategory === category.id ? '!text-neon-green' : ''"
+                                    x-text="category.id"></span>
+                                <span
+                                    class="text-sm md:text-xl font-bold tracking-wider uppercase font-sans whitespace-nowrap lg:whitespace-normal"
+                                    :class="activeCategory === category.id ? 'text-white' : 'text-white/70'"
+                                    x-text="category.title"></span>
+                            </div>
+                        </button>
+                    </template>
+
+                    <!-- Fill remaining height on big screens -->
+                    <div
+                        class="hidden lg:block h-full min-h-[200px] border-b border-white/20 opacity-10"
+                    >
+                    </div>
+                </div>
+
+                <!-- Mobile Navigation Cues -->
+                <div
+                    class="lg:hidden flex flex-col items-center py-2 border-b border-white/20 bg-white/[0.02]"
+                >
+                    <div class="flex gap-2 mb-2">
+                        <template x-for="cat in categories" :key="cat.id">
+                            <div
+                                class="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                                :class="activeCategory === cat.id ? 'bg-neon-green w-4' : 'bg-white/20'"
+                            >
+                            </div>
+                        </template>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 opacity-40 animate-pulse"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            class="w-3 h-3"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M15.75 19.5L8.25 12l7.5-7.5"></path>
+                        </svg>
+                        <span
+                            class="font-mono text-[8px] tracking-[0.2em] uppercase"
+                            >Atal guztiak ikusteko</span
+                        >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="2"
+                            stroke="currentColor"
+                            class="w-3 h-3"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                id="rules-content"
+                class="lg:col-span-8 bg-white/5 p-6 md:p-12 relative border-r border-white/20 border-b lg:border-b-0 overflow-y-auto transition-all duration-300 min-h-[500px] lg:h-auto"
+            >
+                <!-- Inner Grid Background -->
+                <div
+                    class="absolute inset-0 pointer-events-none opacity-20"
+                    style="background-image: radial-gradient(circle, #fff 1px, transparent 1px); background-size: 20px 20px;"
+                >
+                </div>
+
+                <!-- Dynamic Content -->
+                <template x-for="category in categories" :key="category.id">
+                    <div
+                        x-show="activeCategory === category.id"
+                        x-transition:enter="transition ease-out duration-500"
+                        x-transition:enter-start="opacity-0 translate-y-4"
+                        x-transition:enter-end="opacity-100 translate-y-0"
+                        x-transition:leave="transition ease-in duration-300 absolute"
+                        x-transition:leave-start="opacity-100 translate-y-0"
+                        x-transition:leave-end="opacity-0 -translate-y-4"
+                        class="relative h-full flex flex-col"
+                    >
+                        <div
+                            class="flex justify-between items-end mb-8 md:mb-12 border-b border-white/15 pb-4"
+                        >
+                            <h4
+                                class="text-3xl md:text-6xl mb-3 font-black italic uppercase text-neon-green"
+                                x-text="category.title"
+                            >
+                            </h4>
+                        </div>
+
+                        <!-- Highlights / Quick Stats (Only for Inskripzioak) -->
+                        <div
+                            x-show="category.id === '01'"
+                            class="grid grid-cols-2 gap-4 mb-4"
+                        >
+                            <div class="bg-black/50 border border-white/10 p-4">
+                                <span
+                                    class="block text-neon-green text-[14px] uppercase mb-1 font-mono"
+                                    >// PREZIOA</span
+                                >
+                                <span
+                                    class="text-2xl md:text-4xl font-bold font-sans"
+                                    >22€ / 35€</span
+                                >
+                                <span
+                                    class="block text-white/60 text-[14px] mt-1 font-mono"
+                                    >Banakakoa / Bikoteka</span
+                                >
+                            </div>
+                            <div class="bg-black/50 border border-white/10 p-4">
+                                <span
+                                    class="block text-neon-green text-[14px] uppercase mb-1 font-mono"
+                                    >// PLAZAK</span
+                                >
+                                <span
+                                    class="text-2xl md:text-4xl font-bold font-sans"
+                                    >300</span
+                                >
+                                <span
+                                    class="block text-white/60 text-[14px] mt-1 font-mono"
+                                    >Gehienez</span
+                                >
+                            </div>
+                        </div>
+
+                        <!-- Rules List -->
+                        <div
+                            class="space-y-6 md:space-y-8 flex-grow overflow-y-auto pr-4"
+                        >
+                            <template x-for="item in category.items">
+                                <div class="group">
+                                    <h5
+                                        class="text-neon-green font-mono text-xs md:text-sm mb-2 md:group-hover:text-white transition-colors uppercase tracking-wider sticky top-0 bg-black/80 backdrop-blur-sm z-10 py-1"
+                                        x-text="item.title"
+                                    >
+                                    </h5>
+                                    <p
+                                        class="text-white/80 text-sm md:text-base leading-relaxed border-l-2 border-white/10 pl-4 md:group-hover:border-neon-green transition-colors font-sans"
+                                        x-text="item.text"
+                                    >
+                                    </p>
+                                </div>
+                            </template>
+                        </div>
+
+                        <!-- Warning/Notice Box -->
+                        <div
+                            x-show="category.id === '01'"
+                            class="mt-8 md:mt-12 p-4 border border-neon-green/30 bg-neon-green/5"
+                        >
+                            <span
+                                class="block text-neon-green font-mono text-xs mb-2"
+                                >// OHAR GARRANTZITSUA</span
+                            >
+                            <p
+                                class="text-xs md:text-sm text-white/80 font-mono"
+                            >
+                                Behin izena emanda, ez da dirurik itzuliko
+                                antolakuntzak hala erabaki ezean. Izen emateak
+                                dortsalaren asegurua barne hartzen du.
+                            </p>
+                        </div>
+
+                        <!-- PDF Download Button (Visible in all tabs) -->
+                        <div class="mt-12 pt-8 border-t border-white/10">
+                            <a
+                                href="/ARAUDIA_2026.pdf"
+                                download="ARAUDIA_Txirrita_2026.pdf"
+                                class="inline-flex items-center gap-2 text-neon-green md:hover:text-white transition-colors group"
+                                title="Araudia PDF formatuan deskargatu"
+                            >
+                                <span
+                                    class="font-mono text-xs uppercase tracking-widest md:group-hover:underline"
+                                    >PDF Osoa Deskargatu</span
+                                >
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="currentColor"
+                                    class="w-4 h-4"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .stroke-text-white {
+        -webkit-text-stroke: 1px rgb(255, 255, 255);
+    }
+    @media (min-width: 768px) {
+        .stroke-text-white {
+            -webkit-text-stroke: 2px rgb(255, 255, 255);
+        }
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>

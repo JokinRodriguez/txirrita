@@ -1,0 +1,202 @@
+---
+const sponsors = [
+    { name: "Rural Kutxa", file: "Recurso 10@4x.png" },
+    { name: "Elizalde Inmobiliaria", file: "Recurso 11@4x.png" },
+    { name: "Aduriz Lujanbio", file: "Recurso 12@4x.png" },
+    { name: "Donostia San Sebastián", file: "Recurso 13@4x.png" },
+    { name: "Altzatarra K.E.", file: "Recurso 14@4x.png" },
+    { name: "Errenteria Udala", file: "Recurso 15@4x.png" },
+    { name: "Astigarragako Udala", file: "Recurso 17@4x.png" },
+    { name: "Txirrita Botika", file: "Recurso 18@4x.png" },
+    { name: "Errenteria Centro de Día", file: "Recurso 19@4x.png" },
+    { name: "Otaka Construcciones", file: "Recurso 20@4x.png" },
+    { name: "Ezeroi", file: "Recurso 22@4x.png" },
+    { name: "Bar Lizarpe & Donner Kebab", file: "Recurso 24@4x.png" },
+    { name: "Mater", file: "Recurso 28@4x.png" },
+    { name: "El Taller", file: "Recurso 30@4x.png" },
+    { name: "Petritegi", file: "Recurso 34@4x.png" },
+    { name: "Nao Etxea", file: "Recurso 35@4x.png" },
+    { name: "La Perla", file: "Recurso 36@4x.png" },
+    { name: "C&V Cortadores y Venenciadores", file: "Recurso 37@4x.png" },
+    { name: "Betikoak S.L.", file: "Recurso 5@4x.png" },
+    { name: "Joseba López Fisioterapia", file: "Recurso 6@4x.png" },
+    { name: "Irutxuloko Hitza", file: "Recurso 7@4x.png" },
+    { name: "Berria", file: "Recurso 8@4x.png" },
+    { name: "Delta", file: "Recurso 9@4x.png" },
+    { name: "Altzako Jai Batzordea", file: "Copia de Recurso 31@4x.png" },
+    {
+        name: "Peña Real Sociedad Altza",
+        file: "Copia de a85b5d35-5924-4dba-a236-4f333f492d41.JPG",
+    },
+    {
+        name: "Alazne Ileapaindegia",
+        file: "Copia de ceb6422a-6d95-4629-8d23-6ee441fd8bc1.jpg",
+    },
+    { name: "Iruma Diseño y Proyectos Industriales", file: "iruma-logo.jpg" },
+    { name: "Azoka - Groseko Merkatua", file: "New Logo.png" },
+];
+
+// All 28 sponsors in a simple list
+const gridItems = sponsors.map((s) => ({ ...s, cta: false }));
+---
+
+<section
+    id="partners"
+    class="bg-black text-white pt-12 md:pt-32 pb-8 md:pb-16 font-sans selection:bg-neon-green selection:text-black overflow-x-hidden border-t border-white/20"
+>
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        <!-- Header Section -->
+        <div class="relative mb-12 md:mb-16">
+            <!-- Background Text Decoration -->
+            <div
+                class="absolute -top-4 md:-top-10 left-1/2 -translate-x-1/2 w-screen overflow-hidden opacity-10 pointer-events-none select-none flex justify-center"
+            >
+                <span
+                    class="text-6xl sm:text-8xl md:text-[200px] font-black italic leading-none text-transparent stroke-text-white whitespace-nowrap"
+                >
+                    BABESLEAK
+                </span>
+            </div>
+
+            <div
+                class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-white/20 pb-8"
+            >
+                <div
+                    class="flex flex-col items-center md:items-start text-center md:text-left w-full md:w-auto"
+                >
+                    <div class="flex items-center gap-4 mb-2">
+                        <div class="h-[1px] w-12 bg-neon-green"></div>
+                        <span
+                            class="text-neon-green font-mono text-xs md:text-sm tracking-[0.3em] uppercase"
+                            >04 // Babesleak</span
+                        >
+                    </div>
+                    <h2
+                        class="text-4xl md:text-8xl font-sans font-black italic uppercase leading-[0.85] tracking-tighter"
+                    >
+                        <span
+                            class="block text-transparent stroke-text-white opacity-70"
+                            >Babesleak &</span
+                        >
+                        <span
+                            class="text-neon-green drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]"
+                            >Laguntzaileak</span
+                        >
+                    </h2>
+                </div>
+
+                <div class="max-w-md text-center md:text-right">
+                    <p
+                        class="font-mono text-[10px] md:text-xs leading-relaxed text-white/70 uppercase tracking-wide mb-4"
+                    >
+                        <span class="text-neon-green">///</span> Gure bidelagunak.
+                        Altzako mendi lasterketa posible egiten duten enpresa eta
+                        erakundeak.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Partnership Grid -->
+        <!-- Use grid-flow-dense to fill around the explicitly positioned CTA -->
+        <div
+            class="grid grid-cols-3 lg:grid-cols-5 gap-0 border border-white/5 mb-12 md:mb-20 grid-flow-dense"
+        >
+            <!-- CTA Placeholder - Precision Centered -->
+            <!-- Mobile: Row 5, Col 2 (col-start-2 row-start-5) -->
+            <!-- Desktop: Row 3, Col 3 (lg:col-start-3 lg:row-start-3) -->
+            <div
+                class="aspect-square bg-white/[0.05] backdrop-blur-md border border-neon-green/30 flex flex-col items-center justify-center text-center p-2 sm:p-4 group cursor-pointer transition-all duration-300 md:hover:bg-white/[0.08] md:hover:border-neon-green/50 md:hover:scale-105 md:hover:z-10 relative shadow-2xl col-start-2 row-start-5 lg:col-start-3 lg:row-start-3 overflow-hidden"
+            >
+                <!-- Glint effect - Desktop Only -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent -translate-x-full md:group-hover:translate-x-full transition-transform duration-1000"
+                >
+                </div>
+
+                <span
+                    class="text-sm sm:text-lg md:text-2xl font-black italic uppercase leading-[1.1] sm:leading-tight mb-1 sm:mb-2 text-white md:group-hover:text-neon-green transition-colors"
+                    >ZURE LOGOA HEMEN</span
+                >
+                <span
+                    class="text-neon-green font-mono text-[7px] sm:text-[10px] tracking-widest"
+                    >+ BATU TALDERA</span
+                >
+            </div>
+
+            <!-- Sponsor Logos flow around the CTA -->
+            {
+                gridItems.map((item) => (
+                    <div class="aspect-square bg-white/[0.02] backdrop-blur-sm border border-white/5 flex flex-col items-center justify-center p-4 md:p-8 group transition-all duration-500 md:hover:bg-white/[0.07] md:hover:border-white/20 md:hover:scale-105 md:hover:z-10 relative overflow-hidden">
+                        <!-- Subtle background glow on hover - Desktop Only -->
+                        <div class="absolute inset-0 bg-neon-green/0 md:group-hover:bg-neon-green/[0.02] transition-colors duration-500" />
+
+                        <img
+                            src={`/images/sponsors/${item.file}`}
+                            alt={item.name}
+                            title={item.name}
+                            class="max-w-full max-h-full object-contain w-full h-full grayscale-[0.3] opacity-80 transition-all duration-700 ease-out transform md:group-hover:grayscale-0 md:group-hover:opacity-100 md:group-hover:scale-110"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+
+        <!-- CTA Block: Join the Alliance -->
+        <div
+            class="border-2 border-neon-green p-6 md:p-16 mb-16 md:mb-32 relative overflow-hidden group"
+        >
+            <div
+                class="absolute inset-0 bg-neon-green/5 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity"
+            >
+            </div>
+
+            <div
+                class="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 md:gap-12"
+            >
+                <div class="max-w-2xl text-center lg:text-left">
+                    <h3
+                        class="text-3xl sm:text-4xl md:text-6xl font-black italic uppercase mb-4 md:mb-6 leading-none"
+                    >
+                        BATU <br />
+                        <span class="text-neon-green">TALDERA</span>
+                    </h3>
+                    <p
+                        class="font-mono text-[10px] sm:text-xs md:text-sm text-white/60 leading-relaxed uppercase tracking-wider"
+                    >
+                        Lagun gaitzazu 2026ko Txirrita Mendi Lasterketa
+                        ahaztezina egiten.
+                        <br />
+                        <br />
+                        Jarri zure marka milaka mendi-kirol zaleren aurrean, ekonomikoki
+                        edo produktu saskian parte hartuz.
+                    </p>
+                </div>
+
+                <div class="flex flex-col items-center lg:items-end gap-6">
+                    <a
+                        href="mailto:txirritamendilasterketa@gmail.com"
+                        class="bg-neon-green text-black font-black italic uppercase px-6 py-4 md:px-10 md:py-5 text-sm sm:text-lg md:text-2xl active:bg-white md:hover:bg-white transition-colors transform -skew-x-12"
+                    >
+                        <span class="block skew-x-12">BABESLE BIHURTU</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .stroke-text-white {
+        -webkit-text-stroke: 2px rgb(255, 255, 255);
+    }
+    /* Make white-background logos visible on dark background */
+    .filter-white-logo {
+        filter: brightness(0) invert(1);
+        opacity: 0.75;
+        transition: opacity 0.3s ease;
+    }
+    .filter-white-logo:hover {
+        opacity: 1;
+    }
+</style>
